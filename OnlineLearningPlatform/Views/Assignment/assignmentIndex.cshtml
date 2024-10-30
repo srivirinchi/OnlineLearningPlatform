@@ -1,0 +1,27 @@
+@model IEnumerable<OnlineLearningPlatform.Models.Assignment>
+
+@{
+    ViewData["Title"] = "Assignments";
+}
+
+<h1>Assignments</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var assignment in Model)
+        {
+            <tr>
+                <td>@assignment.Title</td>
+                <td>@assignment.Description</td>
+                <td>@assignment.Course.CourseName</td>
+            </tr>
+        }
+    </tbody>
+</table>
